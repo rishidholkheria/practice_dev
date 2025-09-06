@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Path, HTTPException
+from fastapi import FastAPI, Path, HTTPException, Query
 import json
 
 app = FastAPI()
@@ -67,4 +67,25 @@ def greet_wrt_time(time : int = Path(..., description="Time(Hour) in 24 hour for
             return "Good Night"
       
 
+### QUERY PARAMETERS ###
+
+@app.get("/age-sort")
+def sort_age(age:int = Query(..., description="Sort on the basis of height", example="35"), sort_type:str = Query(..., description="Sort type - asc or desc")):
+      if age<0:
+            raise HTTPException(status_code=400, detail="Give correct age!")
+      if sort_type not in ["asc", "desc"]:
+            raise HTTPException(status_code=400, detail="Sort type wrong!")
+      
+      data = load_data()
+      
+      reverse_sort = False if sort_type == "asc" else True
+      
+      # In your patient dictionaries, the key is a string "age", not the number 32.
+      # .get(age, 0) is really like .get(27, 0)
+      # and since there’s no key 27, it always returns 0. That’s why sorting does nothing.
+      
+      sorted_data = sorted(data, key=lambda x: x.get("age", 0), reverse=reverse_sort)
+      
+      return sorted_data
+            
 
