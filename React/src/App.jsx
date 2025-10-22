@@ -5,12 +5,14 @@ import './App.css'
 import Debounce from './Debounce'
 import Throttling from './Throttling'
 import Cart from './Cart'
+import Form from './Form'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
+      <Form/>
       <Cart/>
       <h2>Debounce and Throttle</h2>
       <Debounce/>
