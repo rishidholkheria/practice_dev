@@ -39,8 +39,8 @@
 - **Truthy / Falsy** values
 - Converting values like `"hello"`, `undefined` → Boolean
 - Printing based on **object length**
-- **== vs ===**, reference vs value comparison  
-  Example: `console.log([] == [])` → `false`
+- **== vs ===**, reference vs value comparison  
+  Example: `console.log([] == [])` → `false`
 
 ### 🔹 Events & Execution
 - **Event loop** and **Call Stack**
@@ -57,8 +57,8 @@
 - **Async/Await** and error handling
 - **Callback Hell → Promises → Async/Await**
 - Example implementations of:
-  - Fetch API using Promises
-  - Async data loading
+  - Fetch API using Promises
+  - Async data loading
 
 ---
 
@@ -67,8 +67,8 @@
 ### Debounce and Throttle
 - What they are, **why used**, and **React-friendly implementation**
 - ✅ **Interview must-practice**
-  - Debounce example (Search)
-  - Throttle example (Scroll, Resize)
+  - Debounce example (Search)
+  - Throttle example (Scroll, Resize)
 
 ### Common Practical Implementations
 - Add to **Cart functionality**
@@ -97,12 +97,50 @@
 
 ---
 
-## 🧩 Backend (Core + CRUD)
+## 🧩 Backend & APIs
+
+### 🔹 Core API Concepts
+- **Client-Server Architecture**
+- **API Methods:** Differences and Usage (GET, POST, PUT, DELETE, PATCH)
+- **REST API** basics
+- **Request Headers** (e.g., `Content-Type`, `Authorization`)
+- **Path Params** vs. **Query Params** (When to use each)
+- **Status Codes:** Meanings and differences (1xx, 2xx, 3xx, 4xx, 5xx)
+
+### 🔹 Data & Communication
+- **Message Formats:** JSON, XML
+- **Communication Protocols:** TCP vs. UDP (Where used, reliability)
+- **HTTP vs. HTTPS**
+- **Request Timeouts** and strategies
+- **Middlewares** (Usage in Express.js: logging, auth, error handling)
+
+### 🔹 Authentication
+- **JWT (JSON Web Token) Authentication** flow
+- Session-based vs. Token-based auth
+
+### 🔹 Node.js & Express
 - Basic **Node.js / Express.js** setup
-- REST API basics (GET, POST, PUT, DELETE)
+- Error handling in Express
 - Async database calls
-- CRUD using MongoDB / SQL
-- Error handling and middlewares
+
+---
+
+## 🗃️ Databases (SQL & NoSQL)
+
+### 🔹 Core DB Concepts
+- **ACID Properties** (Atomicity, Consistency, Isolation, Durability)
+- **Transactions** in DB
+- **Connection Pools** (Why they are used)
+- **SQL vs. NoSQL** (Key differences, when to use each)
+- **ORMs (Object-Relational Mapping)**: Pros and Cons
+
+### 🔹 SQL Quick Revision
+- Joins (INNER, LEFT, RIGHT, FULL)
+- Subqueries
+- Indexes and optimization
+- GROUP BY, HAVING, ORDER BY
+- Window functions
+- Common Interview Queries
 
 ---
 
@@ -113,15 +151,6 @@
 - API usage: OpenAI / Gemini / Llama
 - Connecting AI models to **React Dashboard**
 - **Automation & Agentic AI** integrations
-
----
-
-## 🧾 SQL Quick Revision
-- Joins, Subqueries
-- Indexes and optimization
-- GROUP BY, HAVING, ORDER BY
-- Window functions
-- Common Interview Queries
 
 ---
 
@@ -140,19 +169,19 @@
 
 ## 🧪 Practice & Revision
 ✅ **Implementations to Practice:**
-- Debounce / Throttle  
-- Cart / Like / Search / Filter  
-- CRUD + Async Handling  
-- Custom Hook  
-- Pagination  
-- Object & Array Manipulation  
+- Debounce / Throttle  
+- Cart / Like / Search / Filter s
+- CRUD + Async Handling  
+- Custom Hooks
+- Pagination  
+- Object & Array Manipulation  
 
 ✅ **Theoretical to Revise:**
-- Closures and Counter Example  
-- Event Loop & Call Stack  
-- Prototype Chain  
-- Promises and Async Flow  
-- Lexical Scope & Shadowing  
-- this in Regular vs Arrow Function  
+- Closures and Counter Example  
+- Event Loop & Call Stack  
+- Prototype Chain  
+- Promises and Async Flow  
+- Lexical Scope & Shadowing  
+- this in Regular vs Arrow Function  
 
 ---
