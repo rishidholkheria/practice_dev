@@ -19,3 +19,7 @@ obj.sports.cricket.push("Iyer")
 
 console.log(obj)
 console.log(copyObj)
+
+console.log("--------------------")
+let deepCopyObj = JSON.parse(JSON.stringify(obj))
+console.log(deepCopyObj)

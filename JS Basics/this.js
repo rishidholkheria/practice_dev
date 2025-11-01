@@ -7,7 +7,7 @@ const obj = {
     console.log("Batsman --- ", this.name)
   },
   printNicknameArrow :  () => {
-    // console.log("Ghochu --- ", this)
+    // console.log("THIS --- ", this)
     console.log("Batsman --- ", this.name)
   }
 }
@@ -15,6 +15,8 @@ const obj = {
 obj.printNickname()
 obj.printNicknameArrow()
 
+
+// Arguments object in this
 
 function normal() {
   console.log(arguments); // Works 
