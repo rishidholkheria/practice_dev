@@ -14,3 +14,8 @@ let obj = {
 console.log(Object.keys(obj).length >= 2 ? Object.keys(obj).length : "Singular")
 console.log(Object.keys(obj)[0])
 console.log(Object.keys(obj[Object.keys(obj)[0]]).length)
+
+
+// Object.keys, Object.values, Object.entries
+
+  
