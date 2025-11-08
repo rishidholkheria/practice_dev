@@ -17,7 +17,7 @@ JOIN customers_offline of ON on.customers_id = of.customers_id
 Tell me if above query is correct, Also i am attempting using Intersection
 
 SELECT name
-
+FROM
 (
 SELECT name
 FROM customers_online
@@ -26,7 +26,6 @@ SELECT name
 FROM customers_offline
 ) AS both_ways
 
-FROM both_ways
 
 
 
@@ -84,6 +83,11 @@ FROM projects
 Will the above query work? If Not, why?
 
 
+SELECT c.project_name, p.parent_project_id
+FROM projects c
+LEFT JOIN projects p ON c.project_id = p.project_id
+
+
 
 
 
@@ -96,9 +100,15 @@ high_value_customers(customer_id)
 👉 Write a query to get only those orders that belong to high-value customers.
 
 
-Idk 
+SELECT o.customer_id
+FROM orders o
+JOIN high_value_customers hvc
+  ON o.customer_id = hvc.customer_id;
 
 
+SELECT *
+FROM orders
+WHERE customer_id IN (SELECT customer_id FROM high_value_customers);
 
 
 Q5 — Conceptual
@@ -111,7 +121,9 @@ EXCEPT vs LEFT JOIN with WHERE IS NULL
 
 
 
-IDK explain
+INTERSECT checks entire row equality (not just a join condition).
+INNER JOIN works via a matching key (ON clause).
+EXCEPT = subtraction logic → like filtering out second set from first.
 
 
 

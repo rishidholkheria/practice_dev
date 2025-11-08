@@ -101,6 +101,7 @@ Write an async function that:
 Fetches both in parallel
 Waits for both to finish
 
+xxxxxxxxxxxxxx
 Way 1:
 function async getData(){
     const res1 = await getUser();
@@ -115,6 +116,15 @@ function async getData(){
     const responses = Promise.all(getUser(), getPosts())
     responses.map((res)=> console.log(res))
 }
+xxxxxxxxxxxxxxxxxx
+
+CORRECT
+async function getData() {
+  const [user, posts] = await Promise.all([getUser(), getPosts()]);
+  console.log(user, posts); // "User Found" "Posts Found"
+}
+
+getData();
 
 
 

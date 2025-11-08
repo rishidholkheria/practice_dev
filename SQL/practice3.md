@@ -8,16 +8,15 @@ and sort the result so the customer with the most orders appears first.
 
 
 
-
+xxxxxxxxxxxx WRONG xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 SELECT c.customer_name, COUNT(o.order_id) AS order_count
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id, c.customer_name
 ORDER BY order_count DESC;
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   
-
-
+----CORRECT----
 SELECT c.customer_name, o.order_count
 FROM customers c
 JOIN (
@@ -28,9 +27,14 @@ JOIN (
 ORDER BY o.order_count DESC;
 
 
-
-
-
+----------------------
+🧠 Shortcut to Remember
+Question pattern	Approach
+“Find all X who have more than N Ys”	→ GROUP BY + HAVING
+“Find the X with the highest/lowest Y in each group”	→ Subquery + JOIN
+“Find top 2 salaries per department”	→ Window functions (ROW_NUMBER / DENSE_RANK)
+“Find total count/sum per group”	→ GROUP BY only
+-----------------------
 
 
 
@@ -68,7 +72,7 @@ Write a query to find the total sales amount per region for the current year,
 but only include regions whose total sales exceed 1,00,000.
 
 
-
+single table me join not req (not always, but there are chances)
 
 SELECT region, SUM(amount)
 FROM sales
@@ -76,6 +80,25 @@ WHERE YEAR(sale_date) = YEAR(CURDATE())
 GROUP BY region
 HAVING SUM(amount) > 100000
 
+
+
+Q4.
+You have a table employees(emp_id, name, department, salary)
+Write a query to list the 2nd highest salary in each department.
+(You can use a subquery — this is an important interview favorite.)
+
+SELECT e.department, e.name, e.salary
+FROM employees e
+WHERE salary = (
+  SELECT MAX(salary)
+  FROM employees
+  WHERE department = e.department
+  AND salary < (
+      SELECT MAX(salary)
+      FROM employees
+      WHERE department = e.department
+  )
+);
 
 
 

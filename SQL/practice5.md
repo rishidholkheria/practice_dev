@@ -38,6 +38,7 @@ Write a query to find each customer’s total order amount across both years.
 
 Explain what will happen if I use JOIN here with an example
 
+xxxxxxxxxxxxxxxxxxxxx
 (
 SELECT customer_id, amount
 FROM orders_2024
@@ -48,6 +49,7 @@ SELECT SUM(amount
 )
 FROM 
 GROUP BY customer_id
+xxxxxxxxxxxxxxxxxxxxxx
 
 ------I didnt understand here exactly----------------
 

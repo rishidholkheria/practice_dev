@@ -16,8 +16,6 @@ arr.forEach((elem) => (
     console.log(elem)
 ))
 
-IDK the difference exactly between map and forEach
-
 arr.filter((elem) => elem>10) // only elements > 10 will be there and will create a new array
 
 arr.reduce((elem, acc) => {elem+acc},0)

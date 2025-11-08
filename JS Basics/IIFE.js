@@ -21,7 +21,7 @@ greet();
 
 ((name)=>{
     console.log(`Hello Good Afternoon ${name}!`);
-})("Rishi");
+})("Rishi");  // --- To get values dynamically
 
 
 

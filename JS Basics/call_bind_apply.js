@@ -34,6 +34,7 @@ let name2 = {
 
 //Function Borrowing
 // If I want to use a method in one object to another object, We use call, apply and bind methods
+// name2.printName()
 name.printName.call(name2); // here we are borrowing printName method of name obj to name2 obj using call method
 
 // Usually we do not add a method in an object instead we make a standlalone function and use for all
@@ -96,7 +97,8 @@ console.log("------------------------");
 
 const add = (a, b) => a + b;
 const bound = add.bind(null, 2);
-console.log(bound(3)); // Output?
+console.log("bound(3) = ",bound(3)); // Output?  === 5
+// This is example of currying
 
 
 

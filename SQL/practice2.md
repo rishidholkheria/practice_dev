@@ -59,7 +59,7 @@ Write a query to get the highest salary in each department, along with the emplo
 SELECT name, MAX(salary)
 FROM employees
 GROUP BY department
-HAVING salary = MAC
+HAVING salary = MAx
 ---------
 
 SELECT e.name, e.department, d.max_sal
@@ -75,6 +75,8 @@ ON e.department = d.department and e.salary = d.max_sal
 “Pick the employees whose department matches m.department and whose salary equals the max salary for that department.”
 
 
+
+Q4.
 ///// SAME question subquery approach
 SELECT e.name, e.department, e.salary
 FROM employees e
@@ -88,7 +90,16 @@ WHERE e.salary = (
 
 
 
+Q5.
+What’s the difference between the WHERE and HAVING clauses?
+When would you use one over the other?
 
+Clause	Works On	Used For	Example
+WHERE	Individual rows	Filtering before grouping	WHERE salary > 50000
+HAVING	Groups (aggregated results)	Filtering after grouping	HAVING COUNT(*) > 3
+
+🧠 Intuition:
+Think of WHERE as a row-level filter and HAVING as a group-level filter.
 
 
 

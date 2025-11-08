@@ -38,17 +38,13 @@ When might you prefer a subquery over a join (and vice versa)?
 JOIN:
 
 Combines data from multiple tables horizontally (adds columns).
-
 Useful when you want related data side-by-side.
-
 Usually faster because SQL optimizers handle them efficiently.
 
 SUBQUERY:
 
 A query inside another query (nested).
-
 Can appear in WHERE, FROM, or SELECT clauses.
-
 Useful when the result of one query depends on another query’s result (e.g., “compare to average salary”).
 
 More readable for “step-by-step” logic, but sometimes slower.

@@ -1,8 +1,8 @@
 // Higher Order Functions
-function getName(ns){
+function getName(fun){
   // Here it is called Paramaters
   // But we also we say - taken as arguments
-  ns("Rishi");
+  fun("Rishi");
 }
 
 const nameShow = (name) => {
