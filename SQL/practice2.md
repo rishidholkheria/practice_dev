@@ -59,7 +59,7 @@ Write a query to get the highest salary in each department, along with the emplo
 SELECT name, MAX(salary)
 FROM employees
 GROUP BY department
-HAVING salary = MAx
+HAVING salary = MAX
 ---------
 
 SELECT e.name, e.department, d.max_sal

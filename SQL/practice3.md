@@ -8,7 +8,7 @@ and sort the result so the customer with the most orders appears first.
 
 
 
-xxxxxxxxxxxx WRONG xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxx SLIGHTLY WRONG (In case when orders are 0/null it won't include them) xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 SELECT c.customer_name, COUNT(o.order_id) AS order_count
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id
@@ -16,7 +16,14 @@ GROUP BY c.customer_id, c.customer_name
 ORDER BY order_count DESC;
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   
-----CORRECT----
+----CORRECT APPROACHES----
+(We need a LEFT JOIN)
+SELECT c.customer_name, COUNT(o.order_id) AS order_count
+FROM customers c
+LEFT JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.customer_name
+ORDER BY order_count DESC;
+
 SELECT c.customer_name, o.order_count
 FROM customers c
 JOIN (
